@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maikel Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://raw.githubusercontent.com/maikeldigital/landing/main/img_fondo.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff !important;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .cta {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            font-size: 1.2em;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+            background-color: transparent;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #ddd !important;
+            opacity: 0.7;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-bottom-color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 1.5em;
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            opacity: 0.6;
+        }
+
+        button:hover {
+            color: #fff;
+            background-color: #0056b3;
+        }
+
+        .confirmation-message {
+            display: none;
+            font-size: 1.5em;
+            color: #28a745;
+            margin-top: 20px;
+        }
+
+        /* Corregido para cubrir bien la opacidad en móviles */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Activa el botón cuando los campos estén llenos */
+        form:valid button {
+            pointer-events: all;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Maikel Digital</h1>
+    <p>He ayudado a miles de profesionales y empresas a mejorar rendimientos y generar resultados con estrategias personalizadas.</p>
+    <p class="cta">Cuéntame cómo puedo ayudarte</p>
+
+    <!-- Formulario con FormSubmit y redirección personalizada -->
+    <form action="https://formsubmit.co/maikeldigitalinfo@gmail.com" method="POST">
+        <input type="email" name="email" placeholder="Pásame tu email para ponerme en contacto contigo" required>
+        <textarea name="project" placeholder="Cuéntame sobre tu proyecto" required></textarea>
+        <button type="submit">Enviar</button>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://tuweb.com/gracias.html"> <!-- Cambia esta URL por la tuya -->
+        <input type="text" name="_honey" style="display:none">
+    </form>
+
+    <!-- Mensaje de confirmación (Solo si se usa redirección personalizada) -->
+    <div class="confirmation-message" id="confirmation-message">
+        ¡Gracias! Me pondré en contacto contigo lo antes posible.
+    </div>
+</body>
+</html>
